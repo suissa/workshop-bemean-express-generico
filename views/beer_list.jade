@@ -1,0 +1,12 @@
+extends layout
+
+block content
+
+  h2 Listagem
+  h3= msg
+  ul
+  for cerveja in  cervejas
+    li #{cerveja.name} - #{cerveja.type} -  
+      a(href="#{cerveja._id}") Edit
+
+  

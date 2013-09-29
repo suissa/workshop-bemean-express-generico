@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1 Beers 
+  h2= msg
+  form(method="post", action="")
+    label
+      input(type="text", name="name", placeholder="name")
+    label
+      input(type="text", name="type", placeholder="type")
+    label
+      textarea(name="description", placeholder="description")
+    input(type="submit", value="SALVAR")

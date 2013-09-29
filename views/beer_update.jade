@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  h1 Beers 
+  h2 #{cerveja[0]['name']}
+  //- #{_id}
+  form(method="post", action="")
+    label
+      input(type="text", name="name", placeholder="name", value=cerveja[0]['name'])
+    label
+      input(type="text", name="type", placeholder="type", value=cerveja[0]['type'])
+    label
+      textarea(name="description", placeholder="description")
+        =cerveja[0]['description']
+    //- input(type="hidden", name="_id", value=cerveja[0]['_id'])
+    input(type="hidden", name="_method", value="put")
+    input.btn.btn-salvar(type="submit", value="SALVAR")
+
+  hr
+
+  form(method="post", action="")
+    label
+      input(type="text", name="name", placeholder="name", value=cerveja[0]['name'])
+    label
+      input(type="text", name="type", placeholder="type", value=cerveja[0]['type'])
+    label
+      textarea(name="description", placeholder="description")
+        =cerveja[0]['description']
+    //- input(type="hidden", name="_id", value=cerveja[0]['_id'])
+    input(type="hidden", name="_method", value="delete")
+    button.btn.btn-deletar DELETAR

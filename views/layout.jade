@@ -1,0 +1,27 @@
+doctype 5
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    h1 MyBeers
+    aside
+      ul
+        li GET - /beers #list all beers
+        li POST - /beers #create new beer
+        li GET - /beers/:id #get one beer
+        li PUT - /beers/:id #update one beer
+        li 
+          | DELETE - /beers/:id 
+          strong #delete 
+          | one beer
+    header
+      form(method="post", action="")
+        label
+          input(type="text", name="name", placeholder="name")
+        label
+          input(type="text", name="type", placeholder="type")
+        label
+          textarea(name="description", placeholder="description")
+        input(type="submit", value="SALVAR")
+    block content
