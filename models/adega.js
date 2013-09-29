@@ -15,10 +15,10 @@ db.once('open', function () {
 var BeerSchema = new Schema({
   name: { type: String, default: '' },
   description: { type: String, default: '' },
-  type: { type: String, default: '' }
+  date_created: { type: String, default: Date.now()}
 });
 
-var Model = mongoose.model('Beer', BeerSchema);
+var Model = mongoose.model('Adega', BeerSchema);
 
 exports.find = function(req, res){
 

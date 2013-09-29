@@ -8,6 +8,7 @@ var routes = require('./routes');
 var user = require('./routes/user');
 var beer = require('./routes/beer');
 var api = require('./routes/api');
+var adega = require('./routes/adega');
 var http = require('http');
 var path = require('path');
 
@@ -54,6 +55,13 @@ app.post('/api/beers', api.create);
 app.get('/api/beers/:id', api.retrieve);
 app.put('/api/beers/:id', api.update);
 app.delete('/api/beers/:id', api.delete);
+
+
+app.get('/api/adega', adega.list);
+app.post('/api/adega', adega.create);
+app.get('/api/adega/:id', adega.retrieve);
+app.put('/api/adega/:id', adega.update);
+app.delete('/api/adega/:id', adega.delete);
 
 // app.get('/beers/create', beer.get_create);
 
