@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  h1 Beers 
+
+  form(method="post", action="")
+    label
+      input(type="text", name="name", placeholder="name")
+    label
+      input(type="text", name="type", placeholder="type")
+    label
+      textarea(name="description", placeholder="description")
+    button.btn.btn-salvar SALVAR
+    button.btn.btn-deletar DELETAR

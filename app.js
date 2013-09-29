@@ -9,7 +9,6 @@ var user = require('./routes/user');
 var beer = require('./routes/beer');
 var http = require('http');
 var path = require('path');
-var corser = require('corser');
 
 var app = express();
 
@@ -24,7 +23,6 @@ app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(corser.create());
 app.options("*", function (req, res) {
     // Finish preflight request.
     res.writeHead(204);
@@ -36,8 +34,11 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+app.get('/expose/:dir/:name', routes.expose);
+
 app.get('/', routes.index);
 app.get('/users', user.list);
+
 
 // Beers
 app.get('/beers', beer.list);
