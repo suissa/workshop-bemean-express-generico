@@ -7,6 +7,7 @@ var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
 var beer = require('./routes/beer');
+var api = require('./routes/api');
 var http = require('http');
 var path = require('path');
 
@@ -46,6 +47,13 @@ app.post('/beers/', beer.create);
 app.get('/beers/:id', beer.retrieve);
 app.put('/beers/:id', beer.update);
 app.delete('/beers/:id', beer.delete);
+
+
+app.get('/api/beers', api.list);
+app.post('/api/beers', api.create);
+app.get('/api/beers/:id', api.retrieve);
+app.put('/api/beers/:id', api.update);
+app.delete('/api/beers/:id', api.delete);
 
 // app.get('/beers/create', beer.get_create);
 
